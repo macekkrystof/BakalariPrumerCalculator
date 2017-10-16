@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kmacek.cz</title>
+    <base href="~/" />
+
+    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+</head>
+<body>
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+<footer>
+    <div class="modal-footer pull-right">
+        <p>Made with 💗 by <a href="https://www.kmacek.cz">Kryštof Macek</a></p>
+        <p>Source: <a href="https://github.com/macekkrystof/BakalariPrumerCalculator">https://github.com/macekkrystof/BakalariPrumerCalculator</a></p>
+        <p>Knihovnu pro komunikaci s Bakaláři vytvořil: <a href="https://github.com/bramborman">Marian Dolinský</a></p>
+        <p class="text-danger">Nejedná se o oficiální aplikaci, tato aplikace nijak neukládá vaše přihlašovací údaje, pouze je předává serveru bakalářů za účelem získání známek. Používání je na vlastní nebezpečí.</p>
+    </div>
+</footer>   
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+﻿<!--<h1>Hello Macík</h1>-->
+
+<div class="container" *ngIf="showLogin">
+    <div class="wrapper">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+        <form class="form-signin" (submit)="getPrumery()">
+            <h3 class="form-signin-heading">Vítejte! Prosím přihlašte se</h3>
+            <hr class="colorgraph"><br>
+            <input type="text" class="form-control" name="udaje.bakalariUrl" [(ngModel)]="udaje.bakalariUrl" placeholder="urlbakalaru/login.aspx" required autofocus/>
+            <small>Zadejte url Bakalářu ve tvaru urlbakalaru.cz/login.aspx</small>
+            <input type="text" class="form-control" name="udaje.username" [(ngModel)]="udaje.username" placeholder="Uživatelské jméno" required/>
+            <input type="password" class="form-control" name="udaje.password" [(ngModel)]="udaje.password" placeholder="Heslo" required />
+            <p class="text-warning">{{errorMessage}}</p>
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Přihlásit</button>
+        </form>
+    </div>
+</div>
+
+<h2 *ngIf="showPrumery" class="text-info">Vaše průměry</h2>
+<div class="text-center" *ngIf="showPrumery">
+    <dl class="dl-horizontal" *ngFor="let prumer of prumery">
+        <dt >{{prumer.predmet}}</dt>
+        <dd >{{prumer.prumer}}</dd>
+    </dl>
+</div>
+<button type="button" (click)="toLogin()" *ngIf="showPrumery" class="btn btn-info">Zpět na přihlášení</button>
