@@ -31,12 +31,10 @@ export class PrumerComponent implements OnInit {
     }
     getPrumery()
     {
-        var stringConstructor = "test".constructor;
-        var arrayConstructor = [].constructor;
         this.loading = true;
         this.prumerService.getPrumery(this.udaje)
             .subscribe(data => {
-                if (data.constructor === arrayConstructor) {
+                if (typeof data == "object") {
                     this.prumery = data;
                     this.showLogin = false;
                     this.showPrumery = true;
